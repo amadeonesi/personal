@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>amadeo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://onionjumoke.us.to/bg.png');
+      background-size: cover;
+      color: black;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: "Times New Roman", serif;
+      font-size: 36px;
+      color: navy;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      background: #c0c0c0;
+      border: 2px ridge #808080;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .image-wrapper {
+      margin: 20px 0;
+    }
+
+    .slow-load {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .slow-load.loaded {
+      opacity: 1;
+    }
+
+    a.download-link {
+      display: block;
+      margin-top: 10px;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    const backgrounds = [
+      'https://amadeo.my.to/bg1.jpg',
+      'https://amadeo.my.to/bg2.png',
+      'https://amadeo.my.to/bg3.png',
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Random background
+      document.body.style.backgroundImage = `url('${backgrounds[Math.floor(Math.random() * backgrounds.length)]}')`;
+
+      // Slow load images
+      const images = document.querySelectorAll('.slow-load');
+      images.forEach(img => {
+        img.onload = () => img.classList.add('loaded');
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>bienvenido...</h1>
+  <div class="content">
+    <p>esta página tiene que quedar como secreto, mayormente la voy a usar para subir archivos y que no, me dio paja hacerla desde 0 asi que le pedi a chatgpt que me haga una pagina basica, y despues le hice un style </p>
+
+    <div class="image-wrapper">
+      <img class="slow-load" src="https://amadeo.my.to/1.png" width="300" height="200" alt="img1">
+      <a class="download-link" href="https://amadeo.my.to/Prog1.html" download>Programa 1.sb3</a>
+    </div>
+
+    <div class="image-wrapper">
+      <img class="slow-load" src="https://amadeo.my.to/2.png" width="300" height="200" alt="img2">
+      <a class="download-link" href="https://amadeo.my.to/Prog2.html" download>Programa 2.sb3</a>
+    </div>
+
+    <div class="image-wrapper">
+      <img class="slow-load" src="https://amadeo.my.to/3.png" width="300" height="200" alt="img3">
+      <a class="download-link" href="https://amadeo.my.to/Prog3.html" download>Programa 3.sb3</a>
+    </div>
+  </div>
+</body>
+</html>
